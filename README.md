@@ -4,7 +4,7 @@ Collection of my shell scripts for a more easy life and better performance
 
 ## SCRIPTS
 
-- youtube-dl/**downloadSongs.sh**: For easy download various songs from files url
+- youtube-dl/**downloadSongs.sh**: For easy download various songs from a list of url in a file
 - git/**cm.sh**: For commit from command line more easily
 - clipboard/**clr_clpbrd.sh**: For clear clipboard
 

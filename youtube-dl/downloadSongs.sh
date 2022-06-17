@@ -9,10 +9,10 @@ print_new_line(){
   echo ""
 }
 download_mp3_from_youtube(){
-  youtube-dl -f "bestaudio/best" -ciw -o "./songsDirectory/audio_only/%(title)s.%(ext)s" -v --extract-audio --audio-quality 0 --audio-format mp3 "$1"
+  yt-dlp -f "bestaudio/best" -P "./songsDirectory/audio_only" -o "%(title)s.%(ext)s" --audio-format mp3 "$1"
 }
 download_video_from_youtube(){
-  youtube-dl -o "./songsDirectory/video_and_audio/%(title)s.%(ext)s" -f best "$1"
+  yt-dlp -o "./songsDirectory/video_and_audio/%(title)s.%(ext)s" -f best "$1"
 }
 make_all_needed_files(){
   mkdir songsDirectory  &> /dev/null
@@ -49,10 +49,10 @@ download_songs_from_array(){
 }
 verify_if_want_video(){
   print_new_line
-  echo "YOU WANT DOWNLOAD WITH VIDEO ( Yes/Y | No/N )"
+  echo "YOU WANT DOWNLOAD WITH VIDEO ( yes/y | no/n )"
   read video_or_audio
   print_new_line
-  if [[ "$video_or_audio" == "y" || "$video_or_audio" == "Y" || "$video_or_audio" == "Yes" || "$video_or_audio" == "YES" ]]
+  if [[ "$video_or_audio" == "y" || "$video_or_audio" == "Y" ||"$video_or_audio" == "yes" || "$video_or_audio" == "Yes" || "$video_or_audio" == "YES" ]]
   then
     NEED_VIDEO=true
   fi
